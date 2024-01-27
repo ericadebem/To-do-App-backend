@@ -14,7 +14,7 @@ app.use(`${baseUrl}/task`, taskRouter);
 const conectDB = async () => {
   try {
     const connection = await mongoose.connect(
-      "mongodb+srv://ericadebemm:cQQVdsTUT6ZrSsMj@cluster0.mu3nqdl.mongodb.net/?retryWrites=true&w=majority"
+      "mongodb+srv://ericadebemm:cQQVdsTUT6ZrSsMj@cluster0.mu3nqdl.mongodb.net/"
     );
   } catch (error) {
     console.error(error);

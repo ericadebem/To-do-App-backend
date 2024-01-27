@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose, { Schema } from "mongoose";
 
 export const taskSchema = new mongoose.Schema(
   {
@@ -10,7 +10,7 @@ export const taskSchema = new mongoose.Schema(
   {
     timestamps: true,
     versionKey: false,
-    collation: "task",
+    collection: "task",
   }
 );
 

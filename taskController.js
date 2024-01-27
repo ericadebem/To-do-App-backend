@@ -7,7 +7,7 @@ const handleError = (error, res) => {
 
 export const getTask = async (req, res) => {
   try {
-    const task = await Task.findById(res.params.id);
+    const task = await Task.findById(req.params.id);
     task
       ? res.status(201).json({ task })
       : res.status(404).json({ msg: "Task not found" });
@@ -15,7 +15,7 @@ export const getTask = async (req, res) => {
     handleError(error, res);
   }
 };
-export const getAllTask = async (req, res) => {
+export const getAllTasks = async (req, res) => {
   try {
     const task = await Task.find({});
     res.status(201).json({ task });
@@ -47,7 +47,7 @@ export const patchTask = async (req, res) => {
 export const deleteTask = async (req, res) => {
   try {
     const task = await Task.findByIdAndDelete(req.params.id);
-    res.status().json({ task });
+    res.status(201).json({ task });
   } catch (error) {
     handleError(error, res);
   }
