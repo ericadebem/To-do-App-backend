@@ -32,6 +32,18 @@ export const postTask = async (req, res) => {
     handleError(error, res);
   }
 };
+export const patchTask = async (req, res) => {
+  try {
+    const task = await Task.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+    });
+    task
+      ? res.status(201).json({ task })
+      : res.status(404).json({ msg: "Task not found" });
+  } catch (error) {
+    handleError(error, res);
+  }
+};
 export const deleteTask = async (req, res) => {
   try {
     const task = await Task.findByIdAndDelete(req.params.id);
