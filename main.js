@@ -4,7 +4,7 @@ import cors from "cors";
 
 const app = express();
 
-cons baseUrl = "/app";
+const baseUrl = "/app";
 
 app.use(express.json());
 app.use(cors());
