@@ -1,13 +1,13 @@
 import mongoose, { Schema } from "mongoose";
 
-export const taskSchema = new mongoose.Schema(
+export const taskSchema = new Schema(
   {
     title: {
       type: String,
       require: true,
     },
     date: {
-      type: Number,
+      type: String,
       require: true,
     },
     action:{
