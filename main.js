@@ -20,8 +20,9 @@ const conectDB = async () => {
     console.error(error);
   }
 };
+const port = 10000
 conectDB().then(() => {
-  app.listen(6060, () => {
-    console.log("server listening on port 6060");
+  app.listen(port, () => {
+    console.log(`server listening on port ${port}`);
   });
 });
